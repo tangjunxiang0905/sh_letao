@@ -45,8 +45,30 @@ $(function () {
 
 
     // 3-点击右侧退出按钮 显示模态框
-    $('.icon_logout').on('click',function() {
+    $('.icon_logout').on('click', function () {
         // 通过找到模态框   调用modal('show')可以显示模态框  hide 隐藏
         $('#logoutModal').modal('show');
     })
+
+
+    // 点击模态框退出按钮  实现退出功能
+    $('#logoutbtn').on('click', function () {
+        // 退出功能应该调用后台提供的接口  在服务器端销毁该用户的登录状态
+        $.ajax({
+            type: 'get',
+            url: '/employee/employeeLogout',
+            dataType: 'json',
+            success: function(info) {
+                // console.log(info); 
+                if(info.success) {
+                    //退出成功 跳转到首页
+                    location.href = 'login.html';
+                }  
+            }
+        })
+    })
+
+    
+    
+
 })
