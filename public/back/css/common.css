@@ -102,6 +102,7 @@ ul {
     background-color: #3C8DBC;
     padding-left: 180px;
     transition: all 1s;
+    z-index: 666;
 }
 .red {
     color: #A94442;
@@ -134,4 +135,11 @@ ul {
 }
 .lt_main .lt_topbar.hideTopbar {
     left: -180px;
+}
+
+.echarts_1,
+.echarts_2 {
+    width: 48%;
+    height: 400px;
+    background-color: skyblue;
 }

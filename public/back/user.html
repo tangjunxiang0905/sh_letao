@@ -29,7 +29,7 @@
         <div class="nav">
             <ul>
                 <li>
-                    <a href="user.html">
+                    <a href="user.html" class="current">
                         <i class="glyphicon glyphicon-user"></i>
                         <span>用户管理</span>
                     </a>
@@ -72,15 +72,9 @@
                     <a href="#">管理系统</a>
                 </li>
                 <li>
-                    <a href="#">首页</a>
+                    <a href="#">用户管理</a>
                 </li>
             </ol>
-
-            <div class="lt_content">
-                <!-- 给echarts 准备具备宽高的容器 -->
-                <div class="echarts_1 pull-left"></div>
-                <div class="echarts_2 pull-right"></div>
-            </div>
         </div>
     </div>
 
@@ -101,11 +95,10 @@
                     <h4 class="modal-title">温馨提示</h4>
                 </div>
                 <div class="modal-body">
-                    <p class="red">
-                        <i class="glyphicon glyphicon-info-sign"></i> 您确定要退出后台管理系统吗？</p>
+                    <p class="red"><i class="glyphicon glyphicon-info-sign"></i> 您确定要退出后台管理系统吗？</p>
                 </div>
                 <div class="modal-footer">
-                    <!-- data-dismiss="modal" 用于关闭模态框   添加这个类即可关闭模态框-->
+                        <!-- data-dismiss="modal" 用于关闭模态框   添加这个类即可关闭模态框-->
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
                     <button type="button" class="btn btn-primary" id="logoutbtn">退出</button>
                 </div>
@@ -118,8 +111,6 @@
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
     <script src="./js/checkLogin.js"></script>
-    <script src="./lib/echarts/echarts.min.js"></script>
-    <script src="./js/index.js"></script>
     <script src="./js/common.js"></script>
 </body>
 
