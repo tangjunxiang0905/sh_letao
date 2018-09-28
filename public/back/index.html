@@ -29,23 +29,23 @@
         <div class="nav">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="user.html">
                         <i class="glyphicon glyphicon-user"></i>
                         <span>用户管理</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="javascript:;" class="category">
                         <i class="glyphicon glyphicon-list"></i>
                         <span>分类管理</span>
                     </a>
                     <div class="child" style="display: none">
-                        <a href="#">一级分类</a>
-                        <a href="#">二级分类</a>
+                        <a href="first.html">一级分类</a>
+                        <a href="second.html">二级分类</a>
                     </div>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="product.html">
                         <i class="glyphicon glyphicon-tags"></i>
                         <span>商品管理</span>
                     </a>
@@ -67,14 +67,44 @@
         </div>
         <!-- 底部容器 container-fluid 流式布局容器   width: 100%  有默认的左右padding-->
         <div class="container-fluid">
-                <ol class="breadcrumb">
-                    <li><a href="#">管理系统</a></li>
-                    <li><a href="#">首页</a></li>
-                </ol>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#">管理系统</a>
+                </li>
+                <li>
+                    <a href="#">首页</a>
+                </li>
+            </ol>
         </div>
     </div>
 
 
+
+
+
+
+    <!-- 退出模态框 外层是蒙层  内层才是模态框
+     模态框大小有三个  默认  modal-lg    modal-sm-->
+    <div class="modal fade" tabindex="-1" id="logoutModal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">温馨提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="red"><i class="glyphicon glyphicon-info-sign"></i> 您确定要退出后台管理系统吗？</p>
+                </div>
+                <div class="modal-footer">
+                        <!-- data-dismiss="modal" 用于关闭模态框   添加这个类即可关闭模态框-->
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">退出</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="./lib/jquery/jquery.min.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.js"></script>

@@ -15,11 +15,38 @@
 // .ajaxStop（）  在所有的ajax 请求完成时调用
 // .ajaxSuccess（）  当每个ajax请求成功时 调用
 
-$(document).ajaxStart(function() {
+$(document).ajaxStart(function () {
     //开启进度条
     NProgress.start();
 })
-$(document).ajaxStop(function() {
+$(document).ajaxStop(function () {
     // 关闭进度条
     NProgress.done();
+})
+
+
+
+// 公共效果
+// 1-二级菜单切换效果
+// 2-左侧菜单栏切换
+// 3-退出功能
+$(function () {
+    // 1-二级菜单切换效果
+    $('.nav .category').on('click', function () {
+        $('.nav .child ').stop().slideToggle();
+    })
+
+    // 2-左侧菜单栏切换
+    $('.icon_menu').on('click', function () {
+        $('.lt_aside').toggleClass('hidemenu');
+        $('.lt_main .lt_topbar').toggleClass('hidemenu');
+        $('.lt_main').toggleClass('hidemenu');
+    })
+
+
+    // 3-点击右侧退出按钮 显示模态框
+    $('.icon_logout').on('click',function() {
+        // 通过找到模态框   调用modal('show')可以显示模态框  hide 隐藏
+        $('#logoutModal').modal('show');
+    })
 })

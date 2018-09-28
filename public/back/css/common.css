@@ -35,8 +35,11 @@ ul {
     height: 100%;
     background-color: #222D32;
     z-index: 999;
+    transition: all 1s;
 }
-
+.lt_aside.hidemenu {
+    left: -180px;
+}
 .lt_aside .brand {
     width: 180px;
     height: 50px;
@@ -98,8 +101,11 @@ ul {
     height: 50px;
     background-color: #3C8DBC;
     padding-left: 180px;
+    transition: all 1s;
 }
-
+.red {
+    color: #A94442;
+}
 
 
 .lt_topbar a {
@@ -110,12 +116,22 @@ ul {
     font-size: 20px;
     text-align: center;
 }
+.lt_topbar.hidemenu {
+    padding-left: 0;
+}
 .lt_main {
     padding-left: 180px;
     padding-top: 50px;
     background-color: pink;
     height: 1000px;
+    transition: all 1s;
+}
+.lt_main.hidemenu {
+    padding-left: 0;
 }
 .lt_main .breadcrumb {
     margin-top: 20px;
+}
+.lt_main .lt_topbar.hideTopbar {
+    left: -180px;
 }
