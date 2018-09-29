@@ -90,22 +90,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>itcast</td>
-                            <td>15102324243</td>
-                            <td>正常</td>
-                            <td><button class="btn btn-danger">禁用</button></td>
-                        </tr>
+
                     </tbody>
                 </table>
+
+
+                <!-- 3.x的版本需要准备ul -->
+                <div class="text-right">
+                        <ul id="paginator"></ul>
+                </div>
             </div>
-
-
-
-
         </div>
     </div>
+
 
 
 
@@ -124,10 +121,11 @@
                     <h4 class="modal-title">温馨提示</h4>
                 </div>
                 <div class="modal-body">
-                    <p class="red"><i class="glyphicon glyphicon-info-sign"></i> 您确定要退出后台管理系统吗？</p>
+                    <p class="red">
+                        <i class="glyphicon glyphicon-info-sign"></i> 您确定要退出后台管理系统吗？</p>
                 </div>
                 <div class="modal-footer">
-                        <!-- data-dismiss="modal" 用于关闭模态框   添加这个类即可关闭模态框-->
+                    <!-- data-dismiss="modal" 用于关闭模态框   添加这个类即可关闭模态框-->
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
                     <button type="button" class="btn btn-primary" id="logoutbtn">退出</button>
                 </div>
@@ -135,12 +133,47 @@
         </div>
     </div>
 
+    <!-- 准备模板 -->
+    <!-- type 类型写成 text/html 和  text/template 都可以说明  该script为模板 -->
+    <script type="text/html" id="tmp">
+{{ each rows v i}}
+    <tr>
+        <td>{{ i + 1 + (page-1) * size }}</td>
+        <td>{{ v.username }}</td>
+        <td>{{ v.mobile }}</td>
+        <!-- isDelete 标记当前用户的状态 
+             如果为1  启用
+             如果为0  禁用
+        -->
+        <td>{{v.isDelete === 1? '正常' : '已禁用'}}</td>
+        <td>
+            {{if v.isDelete === 1}}
+            <button class="btn btn-danger">禁用</button>
+            {{/if}}
+
+           {{if v.isDelete === 0}}
+            <button class="btn btn-success">启用</button>
+           {{/if}}
+        </td>
+    </tr>
+    {{/each}}
+</script>
+
+
+
+
+
+
+
     <script src="./lib/jquery/jquery.min.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.js"></script>
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
     <script src="./js/checkLogin.js"></script>
     <script src="./js/common.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/user.js"></script>
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 </body>
 
 </html>
