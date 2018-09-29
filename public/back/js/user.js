@@ -1,5 +1,5 @@
 $(function () {
-    //一进入页面 需要发送ajax请求  请求用户列表数据，通过模板引擎  进行渲染
+    //1一进入页面 需要发送ajax请求  请求用户列表数据，通过模板引擎  进行渲染
     var currentPage = 1;  //表示当前页
     var pageSize = 5;    //每页多少条
 
@@ -43,4 +43,13 @@ $(function () {
             }
         })
     }
+
+
+    // 2-点击启用禁用按钮 显示模态框  通过事件委托绑定事件 
+    $('tbody').on('click','btn',function() {
+        // 显示模态框
+        $('#userModal').modal('show');
+        
+    })
+
 })
