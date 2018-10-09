@@ -134,15 +134,19 @@
         {{/each}}
     </script>
 
+    <script type="text/html" id="secondTmp">
+        {{each rows v i}}
+        <li><a data-id="{{ v.id }}" href="#">{{ v.brandName }}</a></li>
+        {{/each}}
+    </script>
 
 
 
 
-
-    <!-- 添加分类模态框 外层是蒙层  内层才是模态框
+    <!-- 添加产品模态框 外层是蒙层  内层才是模态框
      模态框大小有三个  默认  modal-lg    modal-sm-->
     <div class="modal fade" tabindex="-1" id="addModal">
-        <div class="modal-dialog modal-sm">
+        <div class="modal-dialog">
             <div class="modal-content">
 
                 <!-- 原生同步文件上传：
@@ -159,7 +163,7 @@
                         <button type="button" class="close" data-dismiss="modal">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        <h4 class="modal-title">添加分类</h4>
+                        <h4 class="modal-title">添加商品</h4>
                     </div>
 
 
@@ -168,7 +172,7 @@
                         <div class="form-group">
                             <div class="dropdown">
                                 <button class="btn  btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                                    <span id="dropDownTXT">请选择一级分类</span>
+                                    <span id="dropDownTXT">请选择二级分类</span>
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu">
@@ -176,26 +180,44 @@
                                 </ul>
                             </div>
                             <!-- 隐藏域 -->
-                            <input type="hidden" name="categoryId">
-                            <!-- 火热的品牌  1 表示火热   0 表示不火热-->
-                            <input type="hidden" name="hot" value="1">
+                            <!-- 归属的品牌id -->
+                            <input type="hidden" name="brandId">
 
                         </div>
                         <div class="form-group">
-                            <input type="text" name="brandName" class="form-control" placeholder="请输入二级分类">
+                            <input type="text" name="proName" class="form-control" placeholder="请输入商品名称">
                         </div>
+
+                        <div class="form-group">
+                            <textarea name="proDesc" class="form-control" rows="3" placeholder="请输入商品描述"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="num" class="form-control" placeholder="请输入商品库存">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="size" class="form-control" placeholder="请输入商品尺码">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="oldPrice" class="form-control" placeholder="请输入商品原价">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="price" class="form-control" placeholder="请输入商品现价">
+                        </div>
+
                         <div class="form-group">
                             <label for="fileupload" class="btn btn-default">上传图片</label>
                             <!-- 指定name 用于后台将来接受文件 -->
                             <!-- 指定data-url 用于指定后台文件上传的地址 -->
-
-
-
-                            <input style="display: none;" type="file" id="fileupload" name="pic1" data-url="/category/addSecondCategoryPic">
+                            <!-- multiple 设置用于让用户可以选择多张图片 -->
+                            <input style="display: none;" type="file" id="fileupload" name="pic1" data-url="/product/addProductPic" multiple>
                         </div>
 
                         <div class="form-group" id="imgBox">
-                            <img src="./images/none.png" width="100" height="100" alt="">
+                            <!-- <img src="./images/none.png" width="100" height="100" alt=""> -->
                             <input type="hidden" name="brandLogo">
                         </div>
                     </div>
